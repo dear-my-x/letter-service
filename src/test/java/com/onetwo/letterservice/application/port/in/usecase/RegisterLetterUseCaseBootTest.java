@@ -17,14 +17,14 @@ class RegisterLetterUseCaseBootTest {
     private RegisterLetterUseCase registerLetterUseCase;
 
     private final String userId = "testUserId";
-    private final String targetUserId = "testTargetUserId";
+    private final String receiverUserId = "testReceiverUserId";
     private final String content = "letterContent";
 
     @Test
-    @DisplayName("[단위][Use Case] Letter 등록 - 성공 테스트")
+    @DisplayName("[통합][Use Case] Letter 등록 - 성공 테스트")
     void registerLetterUseCaseSuccessTest() {
         //given
-        RegisterLetterCommand registerLetterCommand = new RegisterLetterCommand(userId, targetUserId, content);
+        RegisterLetterCommand registerLetterCommand = new RegisterLetterCommand(userId, receiverUserId, content);
 
         //when
         RegisterLetterResponseDto result = registerLetterUseCase.registerLetter(registerLetterCommand);

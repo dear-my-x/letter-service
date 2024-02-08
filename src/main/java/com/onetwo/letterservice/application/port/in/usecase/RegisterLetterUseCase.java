@@ -9,7 +9,7 @@ public interface RegisterLetterUseCase {
      * Register letter use case,
      * register letter data to persistence
      *
-     * @param registerLetterCommand data about register letter with user id and target user id
+     * @param registerLetterCommand data about register letter with user id and ReceiverUserId id
      * @return Boolean about register success
      */
     RegisterLetterResponseDto registerLetter(RegisterLetterCommand registerLetterCommand);

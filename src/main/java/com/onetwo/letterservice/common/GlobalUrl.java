@@ -11,4 +11,7 @@ public class GlobalUrl {
     public static final String EVERY_UNDER_ROUTE = "/**";
 
     public static final String LETTER_ROOT = "/letters";
+
+    public static final String PATH_VARIABLE_LETTER_ID = "letter-id";
+    public static final String PATH_VARIABLE_LETTER_ID_WITH_BRACE = "/{" + PATH_VARIABLE_LETTER_ID + "}";
 }

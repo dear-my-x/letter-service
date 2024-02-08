@@ -68,4 +68,10 @@ public class GlobalExceptionHandler {
         log.debug("ResourceAlreadyFullException", e);
         return ResponseEntity.badRequest().body(e.getMessage());
     }
+
+    @ExceptionHandler(ResourceAlreadyDeletedException.class)
+    public ResponseEntity<String> resourceAlreadyDeletedException(ResourceAlreadyDeletedException e) {
+        log.debug("ResourceAlreadyDeletedException", e);
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
 }

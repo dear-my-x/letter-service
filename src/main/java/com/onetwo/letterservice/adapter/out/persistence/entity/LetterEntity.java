@@ -23,7 +23,7 @@ public class LetterEntity extends BaseEntity {
     private String userId;
 
     @Column(nullable = false)
-    private String targetUserId;
+    private String receiverUserId;
 
     @Column(nullable = false)
     private String content;
@@ -40,25 +40,31 @@ public class LetterEntity extends BaseEntity {
     @Convert(converter = BooleanNumberConverter.class)
     private Boolean state;
 
-    private LetterEntity(Long id, String userId, String targetUserId, String content, Boolean arrived, Boolean received, Boolean state) {
+    @Column(nullable = false, length = 1)
+    @Convert(converter = BooleanNumberConverter.class)
+    private Boolean receiverState;
+
+    private LetterEntity(Long id, String userId, String receiverUserId, String content, Boolean arrived, Boolean received, Boolean state, Boolean receiverState) {
         this.id = id;
         this.userId = userId;
-        this.targetUserId = targetUserId;
+        this.receiverUserId = receiverUserId;
         this.content = content;
         this.arrived = arrived;
         this.received = received;
         this.state = state;
+        this.receiverState = receiverState;
     }
 
     public static LetterEntity domainToEntity(Letter letter) {
         LetterEntity letterEntity = new LetterEntity(
                 letter.getId(),
                 letter.getUserId(),
-                letter.getTargetUserId(),
+                letter.getReceiverUserId(),
                 letter.getContent(),
                 letter.getArrived(),
                 letter.getReceived(),
-                letter.getState()
+                letter.getState(),
+                letter.getReceiverState()
         );
 
         letterEntity.setMetaDataByDomain(letter);

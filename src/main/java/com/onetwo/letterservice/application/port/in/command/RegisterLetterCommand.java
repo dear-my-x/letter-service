@@ -11,14 +11,14 @@ public final class RegisterLetterCommand extends SelfValidating<RegisterLetterCo
     private final String userId;
 
     @NotEmpty
-    private final String targetUserId;
+    private final String receiverUserId;
 
     @NotEmpty
     private final String content;
 
-    public RegisterLetterCommand(String userId, String targetUserId, String content) {
+    public RegisterLetterCommand(String userId, String receiverUserId, String content) {
         this.userId = userId;
-        this.targetUserId = targetUserId;
+        this.receiverUserId = receiverUserId;
         this.content = content;
         this.validateSelf();
     }

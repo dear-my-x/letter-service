@@ -14,9 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
@@ -33,14 +30,14 @@ class RegisterLetterUseCaseTest {
     private LetterUseCaseConverter letterUseCaseConverter;
 
     private final String userId = "testUserId";
-    private final String targetUserId = "testTargetUserId";
+    private final String receiverUserId = "testReceiverUserId";
     private final String content = "letterContent";
 
     @Test
     @DisplayName("[단위][Use Case] Letter 등록 - 성공 테스트")
     void registerLetterUseCaseSuccessTest() {
         //given
-        RegisterLetterCommand registerLetterCommand = new RegisterLetterCommand(userId, targetUserId, content);
+        RegisterLetterCommand registerLetterCommand = new RegisterLetterCommand(userId, receiverUserId, content);
 
         RegisterLetterResponseDto registerLetterResponseDto = new RegisterLetterResponseDto(true);
 

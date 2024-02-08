@@ -16,7 +16,7 @@ public class Letter extends BaseDomain {
 
     private String userId;
 
-    private String targetUserId;
+    private String receiverUserId;
 
     private String content;
 
@@ -26,12 +26,15 @@ public class Letter extends BaseDomain {
 
     private Boolean state;
 
+    private Boolean receiverState;
+
     public static Letter createNewLetterByCommand(RegisterLetterCommand registerLetterCommand) {
         Letter letter = new Letter(
                 null,
                 registerLetterCommand.getUserId(),
-                registerLetterCommand.getTargetUserId(),
+                registerLetterCommand.getReceiverUserId(),
                 registerLetterCommand.getContent(),
+                false,
                 false,
                 false,
                 false
@@ -45,11 +48,12 @@ public class Letter extends BaseDomain {
         Letter letter = new Letter(
                 letterEntity.getId(),
                 letterEntity.getUserId(),
-                letterEntity.getTargetUserId(),
+                letterEntity.getReceiverUserId(),
                 letterEntity.getContent(),
                 letterEntity.getArrived(),
                 letterEntity.getReceived(),
-                letterEntity.getState()
+                letterEntity.getState(),
+                letterEntity.getReceiverState()
         );
 
         letter.setMetaDataByEntity(letterEntity);
@@ -59,5 +63,38 @@ public class Letter extends BaseDomain {
     private void setDefaultState() {
         setCreatedAt(Instant.now());
         setCreateUser(this.userId);
+    }
+
+    private void setUpdateState() {
+        setUpdatedAt(Instant.now());
+        setUpdateUser(this.userId);
+    }
+
+    public boolean isSender(String userId) {
+        return this.userId.equals(userId);
+    }
+
+    public boolean isReceiver(String userId) {
+        return this.receiverUserId.equals(userId);
+    }
+
+    public void senderDelete() {
+        this.state = true;
+        setUpdatedAt(Instant.now());
+        setUpdateUser(this.userId);
+    }
+
+    public void receiverDelete() {
+        this.state = true;
+        setUpdatedAt(Instant.now());
+        setUpdateUser(this.receiverUserId);
+    }
+
+    public boolean isDeletedFromSender() {
+        return this.state;
+    }
+
+    public boolean isDeletedFromReceiver() {
+        return this.receiverState;
     }
 }
