@@ -1,8 +1,8 @@
 package com.onetwo.letterservice.application.port.in.command;
 
-import com.onetwo.letterservice.application.port.SelfValidating;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
+import onetwo.mailboxcommonconfig.common.SelfValidating;
 
 @Getter
 public final class RegisterLetterCommand extends SelfValidating<RegisterLetterCommand> {

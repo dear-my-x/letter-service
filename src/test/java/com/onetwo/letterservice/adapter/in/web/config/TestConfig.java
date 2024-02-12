@@ -1,12 +1,12 @@
 package com.onetwo.letterservice.adapter.in.web.config;
 
-import com.onetwo.letterservice.common.config.filter.AccessKeyCheckFilter;
-import com.onetwo.letterservice.common.jwt.TokenProvider;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import onetwo.mailboxcommonconfig.common.filter.AccessKeyCheckFilter;
+import onetwo.mailboxcommonconfig.common.jwt.TokenProvider;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;

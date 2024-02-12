@@ -10,11 +10,11 @@ import com.onetwo.letterservice.application.port.out.ReadLetterPort;
 import com.onetwo.letterservice.application.port.out.RegisterLetterPort;
 import com.onetwo.letterservice.application.port.out.UpdateLetterPort;
 import com.onetwo.letterservice.application.service.converter.LetterUseCaseConverter;
-import com.onetwo.letterservice.common.exceptions.BadRequestException;
 import com.onetwo.letterservice.common.exceptions.NotFoundResourceException;
 import com.onetwo.letterservice.common.exceptions.ResourceAlreadyDeletedException;
 import com.onetwo.letterservice.domain.Letter;
 import lombok.RequiredArgsConstructor;
+import onetwo.mailboxcommonconfig.common.exceptions.BadRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

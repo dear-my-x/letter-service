@@ -13,7 +13,7 @@ import com.onetwo.letterservice.application.port.in.response.RegisterLetterRespo
 import com.onetwo.letterservice.application.port.in.usecase.DeleteLetterUseCase;
 import com.onetwo.letterservice.application.port.in.usecase.RegisterLetterUseCase;
 import com.onetwo.letterservice.common.GlobalUrl;
-import com.onetwo.letterservice.common.config.SecurityConfig;
+import onetwo.mailboxcommonconfig.common.MailBoxCommonAutoConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = LetterController.class,
         excludeFilters = {
                 @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {
-                        SecurityConfig.class
+                        MailBoxCommonAutoConfig.class
                 })
         })
 @Import(TestConfig.class)
