@@ -85,7 +85,7 @@ public class Letter extends BaseDomain {
     }
 
     public void receiverDelete() {
-        this.state = true;
+        this.receiverState = true;
         setUpdatedAt(Instant.now());
         setUpdateUser(this.receiverUserId);
     }
