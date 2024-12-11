@@ -25,38 +25,72 @@ endif::[]
 //표(table)의 설정 끝.
 
 [[Letter-Service-API]]
-== 1. Like
+== 1. Letter
 
 === Register Letter
 
 http-request
 
-include::{snippets}/register-like/http-request.adoc[]
+include::{snippets}/register-letter/http-request.adoc[]
 
 request-headers
 
-include::{snippets}/register-like/request-headers.adoc[]
+include::{snippets}/register-letter/request-headers.adoc[]
 
 request-fields
 
-include::{snippets}/register-like/request-fields.adoc[]
+include::{snippets}/register-letter/request-fields.adoc[]
 
 request-body
 
-include::{snippets}/register-like/request-body.adoc[]
+include::{snippets}/register-letter/request-body.adoc[]
 
 curl-request
 
-include::{snippets}/register-like/curl-request.adoc[]
+include::{snippets}/register-letter/curl-request.adoc[]
 
 response-fields
 
-include::{snippets}/register-like/response-fields.adoc[]
+include::{snippets}/register-letter/response-fields.adoc[]
 
 response-body
 
-include::{snippets}/register-like/response-body.adoc[]
+include::{snippets}/register-letter/response-body.adoc[]
 
 http-response
 
-include::{snippets}/register-like/http-response.adoc[]
+include::{snippets}/register-letter/http-response.adoc[]
+
+=== Register Letter
+
+path-parameters
+
+include::{snippets}/delete-letter/path-parameters.adoc[]
+
+http-request
+
+include::{snippets}/delete-letter/http-request.adoc[]
+
+request-headers
+
+include::{snippets}/delete-letter/request-headers.adoc[]
+
+request-body
+
+include::{snippets}/delete-letter/request-body.adoc[]
+
+curl-request
+
+include::{snippets}/delete-letter/curl-request.adoc[]
+
+response-fields
+
+include::{snippets}/delete-letter/response-fields.adoc[]
+
+response-body
+
+include::{snippets}/delete-letter/response-body.adoc[]
+
+http-response
+
+include::{snippets}/delete-letter/http-response.adoc[]
